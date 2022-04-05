@@ -1,0 +1,72 @@
+.featured{
+    position: relative;
+    height: 150vh;
+}
+
+.category{
+    position: absolute;
+    top: 130px;
+    left: 50px;
+    font-size: 30px;
+    font-weight: 500;
+    color: white;
+    display: flex;
+    align-items: center;
+}
+.category select{
+    cursor: pointer;
+    background-color:black;
+    border: 1px solid white;
+    color: white;
+    margin-top: 5px;
+    margin-left: 20px;
+    padding: 5px;
+}
+.mainImg{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.info{
+    width: 35%;
+    position: absolute;
+    left:50px;
+    color:white;
+    top: 300px;
+    color: white;
+    display: flex;
+    flex-direction: column;
+}
+.info img{
+    width: 400px;
+}
+
+.desc{
+    text-align: left;
+}
+
+.buttons{
+    display: flex;
+    margin-top: 15px;
+}
+
+.buttons button{
+    padding: 10px 20px;
+    border:none;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    font-weight: 500;
+    margin-right: 10px;
+    cursor: pointer;
+}
+
+.more{
+  background-color: gray;
+}
+.more span{
+    margin-left: 5px;
+}
