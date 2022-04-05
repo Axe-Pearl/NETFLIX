@@ -1,0 +1,86 @@
+.navbar {
+    width: 100%;
+    color: white;
+    font-size: 16px;
+    position: fixed;
+    top: 0;
+    z-index: 999;
+    background: linear-gradient(to top, transparent 0%, rgb(0, 0, 0, 0.3) 50%);
+}
+.navbarscrolled {
+    width: 100%;
+    color: white;
+    font-size: 16px;
+    position: fixed;
+    top: 0;
+    z-index: 999;
+    background-color: black;
+}
+.container{
+    height: 70px;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+}
+.left{
+    display: flex;
+    padding: 20px;
+    align-items: center;
+}
+.left img{
+    height: 40px;
+    width:210px;
+    object-fit: contain;
+    cursor: pointer;
+    margin-right: 30px;
+}
+.left span{
+    color: white;
+    margin-right: 30px;
+    cursor: pointer;
+}
+
+.right{
+    display: flex;
+    padding: 20px;
+    justify-content: space-between;
+    align-items: center;
+}
+.right span{
+    margin-right:20px;
+}
+.right img{
+   height: 40px;
+   width: 40px;
+   object-fit: cover;
+   border-radius: 20px;
+   cursor: pointer;
+}
+
+.icon{
+    margin-right: 35px;
+    cursor: pointer;
+}
+
+.profile{
+    position: relative;
+    display: inline-block;
+}
+.options{
+  display: none;
+  position: absolute;
+  background-color: black;
+  min-width: 80px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  padding: 12px 16px 10px 10px;
+  z-index: 1;
+  margin-left: -65px;
+}
+.options span{
+    margin: 10px;
+    cursor: pointer;
+}
+.profile:hover .options{
+    display: flex;
+    flex-direction: column;
+}
