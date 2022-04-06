@@ -7,7 +7,7 @@ import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown';
 function Navbar() {
   const [IsScrolled, setIsScrolled] = useState(false);
   window.onscroll = ()=>{
-      setIsScrolled(window.pageYOffset == 0 ? false : true);
+      setIsScrolled(window.pageYOffset === 0 ? false : true);
       return () => (window.onscroll = null);
   }
   console.log(IsScrolled);
