@@ -5,7 +5,7 @@ import ArrowBackIosNewIcon from '@mui/icons-material/ArrowBackIosNew';
 import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
 
 
-function List() {
+function List({list}) {
     const listRef =  useRef();
     const [slideNumber, setSlideNumber] = useState(0);
 
@@ -25,20 +25,13 @@ function List() {
     }
   return (
     <div className='list'>
-        <span className='listTitle'>Continue to Watch</span>
-        <div className='wrapper'>
+        <span className='listTitle'>{list.title}</span>
+        <div className='wrapperX'>
             <ArrowBackIosNewIcon style={{ width: "50px" , height: "72%"}}  className="sliderArrow lefta" onClick = {()=>handleClick("left")} />
             <div className='containera' ref = {listRef}>
-              <ListItem />
-              <ListItem />
-              <ListItem />
-              <ListItem />
-              <ListItem />
-              <ListItem />
-              <ListItem />
-              <ListItem />
-              <ListItem />
-              <ListItem />
+              {list.content.map((item)=>(
+                <ListItem item = {item} />
+              ))}
             </div>
             <ArrowForwardIosIcon style={{ width: "50px" , height: "72%"}}  className="sliderArrow righta" onClick = {()=>handleClick("right")} />
         </div>

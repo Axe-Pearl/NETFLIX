@@ -71,4 +71,7 @@ video{
     color: lightgray;
     display: flex;
   }
-  
+  .links{
+      text-decoration: none;
+      color: inherit;
+  }

@@ -49,7 +49,7 @@ router.get("/", verify,async(req,res)=>{
     if(req.user.isAdmin){
         try{
             const users = await User.find().sort();
-            res.status(200).json(user)
+            res.status(200).json(users)
          }
          catch(err){
             return res.status(500).json(err);

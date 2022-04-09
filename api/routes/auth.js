@@ -4,7 +4,7 @@ const bycrpt = require("bcrypt");
 const jwt = require("jsonwebtoken");
 
 router.get("/",(req,res)=>{
-    res.send("Hello!");
+    res.send("Hello NetFLix!");
 });
 
 //REGISTER USER
