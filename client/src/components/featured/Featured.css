@@ -38,12 +38,16 @@
     display: flex;
     flex-direction: column;
 }
+.movieTitle{
+    text-align: start;
+}
 .info img{
     width: 400px;
 }
 
 .desc{
     text-align: left;
+    font-size: 16px;
 }
 
 .buttons{

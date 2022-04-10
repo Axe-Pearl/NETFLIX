@@ -1,10 +1,29 @@
-import React from 'react'
+import React,{ useState,useEffect } from 'react'
 import "./Featured.css";
 import PlayArrowIcon from '@mui/icons-material/PlayArrow';
 import InfoOutlinedIcon from '@mui/icons-material/InfoOutlined';
-
+import axios from "axios";
 
 function Featured({type}) {
+  const [content,setContent] = useState([]);
+  useEffect(()=>{
+     const getRandomContent = async()=>{
+       try{
+          const res = await axios.get(
+          `api/movies/random/?type=${type}`,
+          {headers:{
+              token:"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MjQ4M2ZhYzE4Njc1N2IyOGM1NGJlZTYiLCJpc0FkbWluIjp0cnVlLCJpYXQiOjE2NDk1ODAxNzd9.Jl6T_ArzHffHD-3SJ_5mQ1LH2nWKjdu70IormgzUn9A"
+            }
+          });
+          console.log(res.data[0]);
+          setContent(res.data[0]);
+       }
+       catch(err){
+         console.log(err);
+       }
+     }
+     getRandomContent();
+  },[type])
   return (
     <div className='featured'>
         {type && (
@@ -30,19 +49,17 @@ function Featured({type}) {
         )
         }
       <img className='mainImg'
-        src="https://images.pexels.com/photos/6899260/pexels-photo-6899260.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500"
+        src={content.img}
         alt=""
       />
       <div className="info">
-        <img
-          src="https://occ-0-1432-1433.1.nflxso.net/dnm/api/v6/LmEnxtiAuzezXBjYXPuDgfZ4zZQ/AAAABUZdeG1DrMstq-YKHZ-dA-cx2uQN_YbCYx7RABDk0y7F8ZK6nzgCz4bp5qJVgMizPbVpIvXrd4xMBQAuNe0xmuW2WjoeGMDn1cFO.webp?r=df1"
+        <h1 className='movieTitle'>{content.title}</h1>
+        {/* <img
+          src={content.imgTitle}
           alt=""
-        />
+        /> */}
         <span className="desc">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae
-          adipisci repellendus eum quasi illo, velit numquam, maxime tempora
-          sint deleniti, aliquid qui? Facilis, adipisci! Ratione hic repudiandae
-          temporibus eum earum?
+          {content.desc}
         </span>
         <div className='buttons'>
              <button className='play'>
