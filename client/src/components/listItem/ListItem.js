@@ -8,7 +8,7 @@ import { Link, useNavigate } from "react-router-dom"
 import ReactPlayer from "react-player"
 import axios from "axios";
 
-function ListItem({item}) {
+function ListItem({index,item}) {
   const [movie, setMovie] = useState([]);
   const navigate = useNavigate();
   useEffect(()=>{
@@ -38,17 +38,16 @@ function ListItem({item}) {
 
   return (
     <div className='listItem'
+    style={{ left: isHovered && index * 225 - 50 + index * 2.5 }}
     onMouseEnter={() => setisHovered(true)}
     onMouseLeave={() => setisHovered(false)}
     >
-        
-        {isHovered ? (<><video src={trailer} autoPlay={true} loop /></>) : (<><img
-        src={movie.img}
-        alt=""
-        /></>)
-        }
-        { isHovered && (
+     <img src={movie.img} alt="" />
+     { isHovered && (
         <>
+        <ReactPlayer className = "videoPlayer" url = {trailer} playing={true} loop={true} height="140px" width="100%"
+         style = {{objectFit:"cover",position:"absolute",top:"0",left:"0"}}
+        />
         <div className='itemInfo'>
            <div className='icons'>
            <PlayArrowIcon className='iconlist' onClick = {()=>{toWatch()}} />

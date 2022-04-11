@@ -29,8 +29,8 @@ function List({list}) {
         <div className='wrapperX'>
             <ArrowBackIosNewIcon style={{ width: "50px" , height: "72%"}}  className="sliderArrow lefta" onClick = {()=>handleClick("left")} />
             <div className='containera' ref = {listRef}>
-              {list.content.map((item)=>(
-                <ListItem item = {item} />
+              {list.content.map((item,i)=>(
+                <ListItem index = {i} item = {item} />
               ))}
             </div>
             <ArrowForwardIosIcon style={{ width: "50px" , height: "72%"}}  className="sliderArrow righta" onClick = {()=>handleClick("right")} />

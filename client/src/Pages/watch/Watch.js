@@ -16,7 +16,7 @@ function Watch() {
           Home
         </div>
         <div className='player-wrapper'>
-        <ReactPlayer  className='react-player' height="100%" width="100%"
+        <ReactPlayer  className='react-player' height="100%" width="100%" playing={true}
         url= {movie} controls progress
         />
         </div>
