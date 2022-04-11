@@ -48,7 +48,8 @@ router.post("/login",async (req,res)=>{
             {_id:userExist._id, isAdmin:userExist.isAdmin},
             process.env.SECRET_KEY
             );
-            return res.status(201).json({message:"User Logged In Successfully!",accessToken});
+            const user = userExist._doc;
+            return res.status(201).json({message:"User Logged In Successfully!",user:{...user,accessToken }});
         }
         return res.status(422).json({message:"Invalid Credentials"});
      }

@@ -1,29 +1,48 @@
-import React from 'react'
-import { useRef } from 'react';
-import { useState } from 'react'
+import React,{useRef, useState} from 'react'
 import "./Register.css"
+import { Link, useNavigate } from "react-router-dom";
+import axios from 'axios';
 
 function Register() {
   const [email,setEmail] = useState("");
   const [password,setPassword] = useState("");
+  const [cpassword,setcpassword] = useState("");
+  const [username, setUsername] = useState("");
+  const navigate = useNavigate();
+  
   const emailRef = useRef();
   const passwordRef = useRef();
+  const cpasswordRef = useRef();
+  const usernameRef = useRef();
 
   const handleStart = ()=>{
      setEmail(emailRef.current.value);
   }
-  const handleFinish = ()=>{
+  const handleFinish = async()=>{
     setPassword(passwordRef.current.value);
+    setUsername(usernameRef.current.value);
+    setcpassword(cpasswordRef.current.value);
+    console.log(email);
+    let message;
+    try{
+      const res = await axios.post("/register", {username,email,password,cpassword})
+      .then((response)=>message = response.data.message);
+      alert(message);
+      navigate("/login");
+    }
+    catch(err){
+       console.log(err);
+    }
   }
   return (
     <div className='register'>
          <div className='wrapper'>
-          <img
-            className="logo"
+         <Link to ="/" ><img
+            className="logoR"
             src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/08/Netflix_2015_logo.svg/2560px-Netflix_2015_logo.svg.png"
             alt=""
-            />
-          <button className='loginButton'>Sign In</button>
+            /></Link> 
+          <Link to = "/login" style= {{textDecoration:"none"}}><button className='loginButton'>Sign In</button></Link>
         </div>
         <div className="containerPromo">
         <h1>Unlimited movies, TV<br/> shows, and more.</h1>
@@ -40,7 +59,9 @@ function Register() {
           ):
           (
             <div className='input'>
+            <input type="username" placeholder="username" ref={usernameRef} value ={username}/>
             <input type="password" placeholder='set password' ref={passwordRef}/>
+            <input type="password" placeholder='confirm password' ref={cpasswordRef}/>
             <button className='registerButton' onClick={handleFinish}>Register</button>
             </div>
           )

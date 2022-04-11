@@ -3,13 +3,16 @@ import Home from "./Pages/home/Home";
 import Register from './Pages/register/Register';
 import Watch from './Pages/watch/Watch';
 import Login from "./Pages/login/Login";
+import { useContext } from 'react';
+import { AuthContext } from './context/authContext/AuthContext';
 import {
   Routes,
   Route,
   Navigate
 } from "react-router-dom";
+
 function App() {
-  const user = true;
+  const { user } = useContext(AuthContext);
   return (
     <div className="App">
      <Routes>
