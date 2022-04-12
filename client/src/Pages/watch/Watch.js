@@ -17,7 +17,7 @@ function Watch() {
         </div>
         <div className='player-wrapper'>
         <ReactPlayer  className='react-player' height="100%" width="100%" playing={true}
-        url= {movie} controls progress
+        url= {movie} controls 
         />
         </div>
         {/* <video className = "videoFull" autoPlay progress controls  src={movie}  /> */}

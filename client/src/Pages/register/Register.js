@@ -59,7 +59,7 @@ function Register() {
           ):
           (
             <div className='input'>
-            <input type="username" placeholder="username" ref={usernameRef} value ={username}/>
+            <input type="username" placeholder="username" ref={usernameRef} />
             <input type="password" placeholder='set password' ref={passwordRef}/>
             <input type="password" placeholder='confirm password' ref={cpasswordRef}/>
             <button className='registerButton' onClick={handleFinish}>Register</button>

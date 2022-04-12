@@ -3,9 +3,20 @@ import "./Featured.css";
 import PlayArrowIcon from '@mui/icons-material/PlayArrow';
 import InfoOutlinedIcon from '@mui/icons-material/InfoOutlined';
 import axios from "axios";
+import { useNavigate } from 'react-router-dom';
 
-function Featured({type}) {
+function Featured({type, setGenre}) {
+  const navigate = useNavigate();
   const [content,setContent] = useState([]);
+  
+  const fonts = {
+      "Horror" : "Creepster,cursive",
+      "Action,Drama":"Libre Baskerville, serif",
+      "Drama,Comedy":"'Bebas Neue', cursive;",
+      "Adventure,Action":"verdana",
+      "Horror,Action":"Creepster,cursive",
+      "Horror, Mystery, suspense, Thriller":"Creepster,cursive"
+    };
   useEffect(()=>{
      const getRandomContent = async()=>{
        try{
@@ -15,7 +26,6 @@ function Featured({type}) {
               token:"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MjQ4M2ZhYzE4Njc1N2IyOGM1NGJlZTYiLCJpc0FkbWluIjp0cnVlLCJpYXQiOjE2NDk1ODAxNzd9.Jl6T_ArzHffHD-3SJ_5mQ1LH2nWKjdu70IormgzUn9A"
             }
           });
-          console.log(res.data[0]);
           setContent(res.data[0]);
        }
        catch(err){
@@ -23,13 +33,19 @@ function Featured({type}) {
        }
      }
      getRandomContent();
-  },[type])
+  },[type]);
+  const toWatch=(c)=>{
+    const movie = c.content;
+    navigate('/watch',{state:{movie}});
+  }
+  let Genre = content.genre;
+  let font = fonts[`${Genre}`];
   return (
     <div className='featured'>
         {type && (
             <div className='category'>
                 <span>{type === "movies" ? "Movies" : "Series"}</span>
-                <select name='genre' id="genre">
+                <select name='genre' id="genre" onChange={(e)=>setGenre(e.target.value)}>
                   <option value="genre">Genre</option>
                    <option value="adventure">Adventure</option>
                    <option value="comedy">Comedy</option>
@@ -40,7 +56,7 @@ function Featured({type}) {
                    <option value="romance">Romance</option>
                    <option value="sci-fi">Sci-fi</option>
                    <option value="thriller">Thriller</option>
-                   <option value="western">Western</option>
+                   <option value="Action">Action</option>
                    <option value="animation">Animation</option>
                    <option value="drama">Drama</option>
                    <option value="documentary">Documentary</option>
@@ -53,17 +69,13 @@ function Featured({type}) {
         alt=""
       />
       <div className="info">
-        <h1 className='movieTitle'>{content.title}</h1>
-        {/* <img
-          src={content.imgTitle}
-          alt=""
-        /> */}
+        <h1 className='movieTitle' style={{fontFamily:`${font}`}}>{content.title}</h1>
         <span className="desc">
           {content.desc}
         </span>
         <div className='buttons'>
              <button className='play'>
-             <PlayArrowIcon />
+             <PlayArrowIcon onClick = {()=>toWatch({content})}/>
              <span>Play</span>
              </button>
              <button className='more'>

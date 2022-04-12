@@ -66,7 +66,18 @@ router.get("/find/:id",verify, async(req,res)=>{
     }
 })
 
-
+router.get("/genre", async(req,res)=>{
+    try{
+        const movie = await Movie.find({"isSeries" :"true"});
+        const resp = movie.map((m)=>{
+            return m._id;
+        })
+        return res.status(200).json(resp);
+    }
+    catch(err){
+        return res.status(400).json(err);
+    }
+})
 
 
 //GET RANDOM

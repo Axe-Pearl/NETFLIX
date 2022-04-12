@@ -38,7 +38,7 @@ router.post("/register",async(req,res)=>{
 router.post("/login",async (req,res)=>{
      const {email,password} = req.body;
      if(!email || !password){
-         res.status(422).json({message:"Fill all credentials"});
+         return res.status(422).json({message:"Fill all credentials"});
      }
      const userExist = await User.findOne({email:email});
      if(userExist){

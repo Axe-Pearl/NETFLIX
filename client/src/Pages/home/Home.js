@@ -10,7 +10,8 @@ function Home({type}) {
   const [lists, setLists] = useState([]);
   const [genre, setGenre] = useState(null);
   useEffect(()=>{
-    //console.log("Dil Maange More...");
+    console.log(type);
+    console.log("type change",genre);
     const getRandomLists = async()=>{
       try{
         const res = await axios.get(
@@ -24,6 +25,7 @@ function Home({type}) {
         }
         );
         setLists(res.data);
+        console.log(res,lists);
       }
       catch(err){
         console.log(err);
@@ -34,7 +36,7 @@ function Home({type}) {
   return (
     <div className='home'>
       <Navbar />
-      <Featured type = {type} />
+      <Featured type = {type} setGenre={setGenre} />
       {lists.map((list)=>(
             <List list = {list} />
       ))}

@@ -34,7 +34,9 @@ function Navbar() {
           <Link to = "/movies" className='links'>
           <span>Movies</span>
           </Link>
+          <Link to = "/newpopular" className='links'>
           <span>New & Popular</span>
+          </Link>
           <span>My List</span>
         </div>
         <div className='right'>

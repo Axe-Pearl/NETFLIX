@@ -42,10 +42,10 @@ function ListItem({index,item}) {
     onMouseEnter={() => setisHovered(true)}
     onMouseLeave={() => setisHovered(false)}
     >
-     <img src={movie.img} alt="" />
+     <img src={movie.img} style = {{objectFit:"cover",objectPosition:"50% 50%"}} alt="" />
      { isHovered && (
         <>
-        <ReactPlayer className = "videoPlayer" url = {trailer} playing={true} loop={true} height="140px" width="100%"
+        <ReactPlayer url = {trailer} playing={true} loop={true} height="140px" width="100%"
          style = {{objectFit:"cover",position:"absolute",top:"0",left:"0"}}
         />
         <div className='itemInfo'>
