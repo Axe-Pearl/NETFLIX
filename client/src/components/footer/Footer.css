@@ -1,0 +1,91 @@
+.TVshows{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    border-top: 8px solid #222222;
+    height:500px;
+    background-color: black;
+}
+
+.promo{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 600px;
+    color: white;
+    padding: 20px;
+    margin-left: 20px;
+}
+
+.TV{
+    width: 600px;
+    position: absolute;
+    right: 35px;
+    margin-top: -50px;
+}
+.android{
+    width: 600px;
+    position: absolute;
+    left: 0px;
+    margin-top: -240px;
+}
+
+.animBox{
+    display: flex;
+    position: absolute;
+    border: 2px solid #222222;
+    width: 400px;
+    left:100px;
+    margin-bottom: -270px;
+    border-radius: 10px;
+    padding: 3px;
+    padding-left: 5px;
+    align-items: center;
+    background-color: black;
+}
+.aniImg{
+    margin-left: 5px;
+    margin-top: 2px;
+    margin-bottom: 2px;
+    margin-right: 5px;
+}
+.sample{
+    display: flex;
+    flex-direction: column;
+    margin-left: 5px;
+}
+
+.footer{
+    height: 400px;
+    background-color: black;
+    width: 100%;
+    border-top: 8px solid #222222;
+    color:#757575;
+}
+.footerContainer{
+    display: flex;
+    justify-content: space-around;
+    width: 650px;
+    margin: 60px;
+    margin-left: 200px;
+
+}
+.col{
+    color:#757575;
+}
+.footerList{
+    margin-top: 60px;
+    list-style-type: none;
+    text-align: left;
+}
+li{
+    font-size: 12px;
+    line-height: 30px;
+}
+
+.storyContainer2{
+    margin-top: -90px;
+    margin-left: -100px;
+}

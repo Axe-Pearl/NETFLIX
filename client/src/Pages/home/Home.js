@@ -2,6 +2,7 @@ import React,{ useState, useEffect  } from 'react'
 import "./Home.css";
 import Navbar from '../../components/navbar/Navbar';
 import Featured from '../../components/featured/Featured';
+import Footer from "../../components/footer/Footer";
 import List from '../../components/lists/List';
 import axios from "axios";
 import { useLocation } from 'react-router-dom';
@@ -40,6 +41,7 @@ function Home({type}) {
       {lists.map((list)=>(
             <List list = {list} />
       ))}
+     <Footer />
     </div>
   )
 }

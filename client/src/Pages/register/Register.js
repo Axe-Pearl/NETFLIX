@@ -1,5 +1,6 @@
 import React,{useRef, useState} from 'react'
 import "./Register.css"
+import Footer from "../../components/footer/Footer";
 import { Link, useNavigate } from "react-router-dom";
 import axios from 'axios';
 
@@ -35,6 +36,7 @@ function Register() {
     }
   }
   return (
+    <>
     <div className='register'>
          <div className='wrapper'>
          <Link to ="/" ><img
@@ -69,6 +71,8 @@ function Register() {
         </div>
         </div>
     </div>
+    <Footer />
+    </>
   )
 }
 

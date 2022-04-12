@@ -56,7 +56,7 @@ function ListItem({index,item}) {
            <ThumbDownOutlinedIcon className='iconlist' />
            </div>
            <div className="itemInfoTop">
-              <span>1 hour 14 mins</span>
+              <span>{movie.duration}</span>
               <span className="limit">+{movie.limit}</span>
               <span>{movie.year}</span>
             </div>
