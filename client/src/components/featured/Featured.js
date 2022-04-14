@@ -5,12 +5,13 @@ import InfoOutlinedIcon from '@mui/icons-material/InfoOutlined';
 import axios from "axios";
 import { useNavigate } from 'react-router-dom';
 
-function Featured({type, setGenre}) {
+function Featured({type, setGenre, genre}) {
   const navigate = useNavigate();
   const [content,setContent] = useState([]);
   
   const fonts = {
-      "Horror" : "Creepster,cursive",
+      "Horror" : "cursive",
+      "Action":"Libre Baskerville, serif",
       "Action,Drama":"Libre Baskerville, serif",
       "Drama,Comedy":"'Bebas Neue', cursive;",
       "Adventure,Action":"verdana",
@@ -33,7 +34,7 @@ function Featured({type, setGenre}) {
        }
      }
      getRandomContent();
-  },[type]);
+  },[type,genre]);
   const toWatch=(c)=>{
     const movie = c.content;
     navigate('/watch',{state:{movie}});
@@ -69,7 +70,7 @@ function Featured({type, setGenre}) {
         alt=""
       />
       <div className="info">
-        <h1 className='movieTitle' style={{fontFamily:`${font}`}}>{content.title}</h1>
+        <h1 className='movieTitle' >{content.title}</h1>
         <span className="desc">
           {content.desc}
         </span>

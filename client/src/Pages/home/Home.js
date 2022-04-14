@@ -14,6 +14,10 @@ function Home({type}) {
     console.log(type);
     console.log("type change",genre);
     const getRandomLists = async()=>{
+      if(genre === "genre"){
+        console.log("yes");
+        genre = "";
+      }
       try{
         const res = await axios.get(
         `api/lists/${type ? "?type="+type : ""}${
@@ -37,7 +41,7 @@ function Home({type}) {
   return (
     <div className='home'>
       <Navbar />
-      <Featured type = {type} setGenre={setGenre} />
+      <Featured type = {type} setGenre={setGenre} genre = {genre} />
       {lists.map((list)=>(
             <List list = {list} />
       ))}
