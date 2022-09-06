@@ -2,7 +2,10 @@
 https://user-images.githubusercontent.com/66417880/188735241-5f2e15c6-9327-42ef-b0de-3ecbc66537e0.mp4
 
 
-**SnapShots of Projects**
+**SnapShots and Videos of the Project**
+
+https://user-images.githubusercontent.com/66417880/188743650-6667523b-ab8b-4a18-85cd-9faece8aa983.mp4
+
 ![image](https://user-images.githubusercontent.com/66417880/188739731-172b793e-13ff-4b64-8504-d6adbb34e18d.png)
 
 ### Aim of the Project - 
