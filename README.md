@@ -2,6 +2,8 @@
 https://user-images.githubusercontent.com/66417880/188735241-5f2e15c6-9327-42ef-b0de-3ecbc66537e0.mp4
 
 
+**SnapShots of Projects**
+![image](https://user-images.githubusercontent.com/66417880/188739731-172b793e-13ff-4b64-8504-d6adbb34e18d.png)
 
 ### Aim of the Project - 
 To clone the Netflix that is a subscription-based streaming service
