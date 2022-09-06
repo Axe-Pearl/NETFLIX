@@ -43,4 +43,5 @@ Further, I again divided this phase into two different sub-phases:
 - User’s password will be kept secure by hashing technique provided by bcryptjs.
 - ContextAPI and useReducer used for data transfer between React components and handling State.
 - Users can filter movies according to Genre, series or non-series.
-- It facilitate to watch movies on full screen. [ 6 ]Users can also keep hovering movie lists to play them
+- It facilitate to watch movies on full screen.
+- Users can also keep hovering movie lists to play them
