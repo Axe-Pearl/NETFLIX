@@ -4,7 +4,7 @@ import PlayArrowIcon from '@mui/icons-material/PlayArrow';
 import ThumbUpOutlinedIcon from '@mui/icons-material/ThumbUpOutlined';
 import ThumbDownOutlinedIcon from '@mui/icons-material/ThumbDownOutlined';
 import AddIcon from '@mui/icons-material/Add';
-import { Link, useNavigate } from "react-router-dom"
+import { useNavigate } from "react-router-dom"
 import ReactPlayer from "react-player"
 import axios from "axios";
 

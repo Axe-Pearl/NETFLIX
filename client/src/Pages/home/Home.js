@@ -5,7 +5,7 @@ import Featured from '../../components/featured/Featured';
 import Footer from "../../components/footer/Footer";
 import List from '../../components/lists/List';
 import axios from "axios";
-import { useLocation } from 'react-router-dom';
+// import { useLocation } from 'react-router-dom';
 
 function Home({type}) {
   const [lists, setLists] = useState([]);
@@ -15,8 +15,8 @@ function Home({type}) {
     console.log("type change",genre);
     const getRandomLists = async()=>{
       if(genre === "genre"){
-        console.log("yes");
-        genre = "";
+        // console.log("yes");
+        setGenre(null);
       }
       try{
         const res = await axios.get(
@@ -30,7 +30,6 @@ function Home({type}) {
         }
         );
         setLists(res.data);
-        console.log(res,lists);
       }
       catch(err){
         console.log(err);

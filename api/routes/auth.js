@@ -3,14 +3,13 @@ const User = require("../models/User");
 const bycrpt = require("bcrypt");
 const jwt = require("jsonwebtoken");
 
-router.get("/",(req,res)=>{
-    res.send("Hello NetFLix!");
-});
-
 //REGISTER USER
+router.get("/register", (req,res)=>{ 
+    res.send("Register page exists");
+})
 router.post("/register",async(req,res)=>{
-    const {username,email,password,cpassword,ProfilePic} = req.body;
-   
+    const { username,email,password,cpassword } = req.body;
+    console.log("from server",req.body);
     if(!username || !email || !password || !cpassword){
         return res.status(422).json({error:"Please fill all required fields"});
     }
@@ -23,7 +22,7 @@ router.post("/register",async(req,res)=>{
             return res.status(422).json({message:"Password not matching!"});
         }
         else{
-            const newUser = new User({username,email,password,cpassword,ProfilePic});
+            const newUser = new User({username,email,password,cpassword});
             //middleware for hashing will be called here before saving the registered user
             const user = await newUser.save()
             res.status(200).json({message:"User registered Successfully"});

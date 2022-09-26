@@ -1,15 +1,13 @@
-import axios from 'axios';
 import React from 'react'
 import { useContext } from 'react';
 import { useRef } from 'react';
 import { useState } from 'react'
-import { useNavigate, Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { login } from '../../context/apiCalls';
 import { AuthContext } from '../../context/authContext/AuthContext';
 import "./Login.css"
 
 function Login() {
-  const navigate = useNavigate();
   const [email,setEmail] = useState("");
   const [password,setPassword] = useState("");
   const { isFetching, dispatch} = useContext(AuthContext);

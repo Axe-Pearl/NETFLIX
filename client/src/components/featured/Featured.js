@@ -9,15 +9,15 @@ function Featured({type, setGenre, genre}) {
   const navigate = useNavigate();
   const [content,setContent] = useState([]);
   
-  const fonts = {
-      "Horror" : "cursive",
-      "Action":"Libre Baskerville, serif",
-      "Action,Drama":"Libre Baskerville, serif",
-      "Drama,Comedy":"'Bebas Neue', cursive;",
-      "Adventure,Action":"verdana",
-      "Horror,Action":"Creepster,cursive",
-      "Horror, Mystery, suspense, Thriller":"Creepster,cursive"
-    };
+  // const fonts = {
+  //     "Horror" : "cursive",
+  //     "Action":"Libre Baskerville, serif",
+  //     "Action,Drama":"Libre Baskerville, serif",
+  //     "Drama,Comedy":"'Bebas Neue', cursive;",
+  //     "Adventure,Action":"verdana",
+  //     "Horror,Action":"Creepster,cursive",
+  //     "Horror, Mystery, suspense, Thriller":"Creepster,cursive"
+  //   };
   useEffect(()=>{
      const getRandomContent = async()=>{
        try{
@@ -39,8 +39,6 @@ function Featured({type, setGenre, genre}) {
     const movie = c.content;
     navigate('/watch',{state:{movie}});
   }
-  let Genre = content.genre;
-  let font = fonts[`${Genre}`];
   return (
     <div className='featured'>
         {type && (

@@ -26,7 +26,7 @@ function Register() {
     console.log(email);
     let message;
     try{
-      const res = await axios.post("/register", {username,email,password,cpassword})
+       await axios.post("/register", {username,email,password,cpassword})
       .then((response)=>message = response.data.message);
       alert(message);
       navigate("/login");

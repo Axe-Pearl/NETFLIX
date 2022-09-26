@@ -11,7 +11,7 @@ function Footer() {
            <p style={{width:"564px",fontSize:"25px",textAlign:"left"}}>Watch on smart TVs, PlayStation, Xbox,Chromecast, Apple TV, Blu-ray players and more.</p>
          </div>
          <div className='imageContainer'>
-           <img className='TV' src='https://assets.nflxext.com/ffe/siteui/acquisition/ourStory/fuji/desktop/tv.png'></img>
+           <img alt="" className='TV' src='https://assets.nflxext.com/ffe/siteui/acquisition/ourStory/fuji/desktop/tv.png'></img>
            <ReactPlayer className="storyContainer" width="500px" 
            url="https://assets.nflxext.com/ffe/siteui/acquisition/ourStory/fuji/desktop/video-tv-in-0819.m4v"
            type="video/mp4" playing = {true} loop = {true} />
@@ -19,7 +19,7 @@ function Footer() {
       </div>
       <div className='TVshows'>
          <div className='imageContainer'>
-           <img className='android' src='https://assets.nflxext.com/ffe/siteui/acquisition/ourStory/fuji/desktop/mobile-0819.jpg'></img>
+           <img alt="" className='android' src='https://assets.nflxext.com/ffe/siteui/acquisition/ourStory/fuji/desktop/mobile-0819.jpg'></img>
          </div>
          <div className='promo'>
            <h1 style={{width:"800px"}}>Download your shows to watch offline.</h1>
@@ -27,13 +27,13 @@ function Footer() {
          </div>
         <div class="animBox">
         <div class="aniImg">
-           <img style = {{width:"50px",height:"60px",objectFit:"cover"}}alt="" src="https://assets.nflxext.com/ffe/siteui/acquisition/ourStory/fuji/desktop/boxshot.png" />
+           <img alt="" style = {{width:"50px",height:"60px",objectFit:"cover"}} src="https://assets.nflxext.com/ffe/siteui/acquisition/ourStory/fuji/desktop/boxshot.png" />
         </div>
         <div class="sample">
          <div style={{color:"white"}}>Stranger Things</div>
          <div style={{color:"blue"}}>Downloading...</div>
         </div>
-        <img style={{width:"50px",height:"50px",objectFit:"cover",marginLeft:"150px"}}src='https://assets.nflxext.com/ffe/siteui/acquisition/ourStory/fuji/desktop/download-icon.gif'></img>
+        <img alt="" style={{width:"50px",height:"50px",objectFit:"cover",marginLeft:"150px"}}src='https://assets.nflxext.com/ffe/siteui/acquisition/ourStory/fuji/desktop/download-icon.gif'></img>
         </div>
       </div>
       <div className='TVshows'>
@@ -42,7 +42,7 @@ function Footer() {
            <p style={{width:"564px",fontSize:"25px",textAlign:"left"}}>Stream unlimited movies and TV shows on your phone, tablet, laptop, and TV.</p>
          </div>
          <div className='imageContainer'>
-           <img className='TV' src='https://assets.nflxext.com/ffe/siteui/acquisition/ourStory/fuji/desktop/device-pile-in.png'></img>
+           <img alt="" className='TV' src='https://assets.nflxext.com/ffe/siteui/acquisition/ourStory/fuji/desktop/device-pile-in.png'></img>
            <ReactPlayer className="storyContainer2" width="400px" 
            url="https://assets.nflxext.com/ffe/siteui/acquisition/ourStory/fuji/desktop/video-devices-in.m4v"
            type="video/mp4" playing = {true} loop = {true} />
@@ -50,7 +50,7 @@ function Footer() {
       </div>
       <div className='TVshows'>
          <div className='imageContainer'>
-           <img className='android' src='https://occ-0-2085-2164.1.nflxso.net/dnm/api/v6/19OhWN2dO19C9txTON9tvTFtefw/AAAABVxdX2WnFSp49eXb1do0euaj-F8upNImjofE77XStKhf5kUHG94DPlTiGYqPeYNtiox-82NWEK0Ls3CnLe3WWClGdiJP.png?r=5cf'></img>
+           <img alt="" className='android' src='https://occ-0-2085-2164.1.nflxso.net/dnm/api/v6/19OhWN2dO19C9txTON9tvTFtefw/AAAABVxdX2WnFSp49eXb1do0euaj-F8upNImjofE77XStKhf5kUHG94DPlTiGYqPeYNtiox-82NWEK0Ls3CnLe3WWClGdiJP.png?r=5cf'></img>
          </div>
          <div className='promo'>
            <h1 style={{width:"600px",lineHeight:"1",textAlign:"left"}}>Create profiles for children.</h1>

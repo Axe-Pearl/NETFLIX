@@ -106,8 +106,22 @@ router.get("/random", verify,async(req,res)=>{
  });
 
  //GET ALL
- router.get("/",verify,async(req,res)=>{
-    if(req.user.isAdmin){
+//  router.get("/",verify,async(req,res)=>{
+//     if(req.user.isAdmin){
+//        try{
+//           const movies = await Movie.find();
+//           return res.status(200).json(movies);
+//        }
+//        catch(err){
+//            return res.status(500).json(err);
+//        }
+//      }
+//      else{
+//          return res.status(403).json({message:"Access Denied !!"});
+//      }
+//  });
+
+router.get("/",async(req,res)=>{
        try{
           const movies = await Movie.find();
           return res.status(200).json(movies);
@@ -115,10 +129,5 @@ router.get("/random", verify,async(req,res)=>{
        catch(err){
            return res.status(500).json(err);
        }
-     }
-     else{
-         return res.status(403).json({message:"Access Denied !!"});
-     }
  });
-
 module.exports = router;
